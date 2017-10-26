@@ -1,6 +1,7 @@
 package com.teaminternational.web;
 
 import com.teaminternational.HelloWorldGenerator;
+import com.teaminternational.HelloWorldGeneratorImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,7 +13,7 @@ import java.io.IOException;
 public class HttpServlet  extends BaseHttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HelloWorldGenerator helloWorldGenerator = getBean("Hello visitor");
+        HelloWorldGenerator helloWorldGenerator = getBean(HelloWorldGeneratorImpl.COMPONENT_NAME);
         resp.getWriter().write("<!DOCTYPE html>\n" +
                 "<html lang=\"en\">\n" +
                 "<head>\n" +
