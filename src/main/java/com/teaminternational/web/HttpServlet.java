@@ -12,7 +12,7 @@ import java.io.IOException;
 public class HttpServlet  extends BaseHttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HelloWorldGenerator helloWorldGenerator = getBean("Hello world");
+        HelloWorldGenerator helloWorldGenerator = getBean("Hello visitor");
         helloWorldGenerator.sayHello();
         resp.getWriter().write("<!DOCTYPE html>\n" +
                 "<html lang=\"en\">\n" +
