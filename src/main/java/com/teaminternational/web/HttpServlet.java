@@ -13,12 +13,11 @@ public class HttpServlet  extends BaseHttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HelloWorldGenerator helloWorldGenerator = getBean("Hello world");
-        helloWorldGenerator.sayHello();
         resp.getWriter().write("<!DOCTYPE html>\n" +
                 "<html lang=\"en\">\n" +
                 "<head>\n" +
                 "    <meta charset=\"UTF-8\">\n" +
-                "    <title>Hello world</title>\n" +
+                "    <title>" + helloWorldGenerator.sayHello() + "</title>\n" +
                 "</head>\n" +
                 "<body>\n" +
                 "\n" +
